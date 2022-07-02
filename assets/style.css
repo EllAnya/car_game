@@ -1,0 +1,289 @@
+body {
+    overflow: hidden;
+    background-image: url('./images/bg.jpg');
+    background-position: bottom;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#players-holder {
+    display: flex;
+    justify-content: start;
+}
+
+video {
+    position: absolute;
+    z-index: -1;
+    bottom: 80px;
+}
+
+#video-bg {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.car-option {
+    width: 50px;
+}
+
+.player-card {
+    background-color: #102e4ea3;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid #ffffff42;
+}
+
+#player-name {
+    font-size: 18px;
+    text-align: center;
+}
+
+.track-holder {
+    width: 100%;
+    height: 310px;
+    background-color: rgb(36 49 64);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(64, 64, 64);
+}
+
+#player-credits {
+    color: chartreuse;
+}
+
+.car-line {
+    width: 100%;
+    position: relative;
+    height: 100px;
+}
+
+.line-dashes {
+    border-bottom: 2px dashed white;
+}
+
+#car-0, #car-1, #car-2 {
+    width: 130px;
+    margin: 10px;
+    position: absolute;
+    left: 0;
+    transition: left;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+#winner-label, #winner-car {
+    display: none;
+}
+
+#winner-label {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+#winner-car {
+    margin-top: 55px !important;
+    margin: auto;
+    width: 180px;
+    animation: spin 8s linear infinite;
+}
+@-moz-keyframes spin { 
+    100% { transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        transform:rotate(360deg); 
+    } 
+}
+
+input[type='number'] {
+    font-weight: bold;
+    width: 160px;
+}
+
+.header {
+    padding: 20px;
+}
+
+.track-edge {
+    width: 100%;
+    height: 4px;
+    background-image: url('./images/line.png');
+    background-repeat: repeat-x;
+}
+
+.top-section {
+    height: calc(100% - 310px);
+    padding-bottom: 30px;
+    position: relative;
+    background-color: #0a0a0ae6;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+#start-race-button, #restart-race-button {
+    display: none;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    float: right;
+    border: 2px solid white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#restart-race-button {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.bi-flag-fill, .bi-arrow-clockwise {
+    font-size: 30px;   
+}
+
+.row {
+    margin: 0;
+    padding: 0 10px;
+}
+
+#car-sound, #bg-sound {
+    display: none;
+}
+
+#sound-on {
+    display: none;
+}
+
+#sound-on, #sound-off {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.638);
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+    left: 160px;
+}
+
+.modal-header {
+    background-color: lightslategray;
+    color: white;
+}
+
+.form-control {
+    background-color: #f7f7f7 !important;
+}
+
+
+@media (max-width: 768px) {
+    #start-race-button, #restart-race-button {
+        font-size: 7px !important;
+        font-weight: bold !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0px !important;
+    }
+
+    .bi-flag-fill, .bi-arrow-clockwise {
+        font-size: 20px;
+        display: block;
+    }
+
+    #player-name {
+        margin-bottom: 0px;
+    }
+
+    .card-credits {
+        margin-bottom: 0px;
+    }
+
+    input[type='number'] {
+        position: relative;
+        bottom: 15px;
+        width: 85px;
+    }
+
+    .player-card {
+        height: 195px;
+        padding: 5px 10px;
+        transition: all 0.3s;
+    }
+
+    #players-holder {
+        flex-wrap: wrap;
+    }
+
+    #car-0, #car-1, #car-2 {
+        width: 90px;
+    }
+
+    .top-section {
+        height: calc(100% - 210px);
+        padding-bottom: 0;
+    }
+
+    .track-holder {
+        height: 210px;
+        width: calc(100% + 95px);
+    }
+
+    #winner-label {
+        font-size: 18px;
+        margin: 0;
+        position: absolute;
+        top: 25px;
+        right: 170px; 
+    }
+
+    #winner-car {
+        width: 65px;
+        margin-top: 20px !important;
+        position: absolute;
+        top: 0;
+        right: 90px;
+    }
+
+    .header {
+        background-color: #000000d4;
+        height: 80px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+
+    .row {
+        padding-top: 80px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    #video-bg {
+        left: -110px;
+        top: -120px;
+    }
+}
